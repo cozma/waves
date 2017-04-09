@@ -48,7 +48,8 @@ AudioVisualizer.prototype.initialize = function () {
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
     this.renderer.setSize(WIDTH, HEIGHT);
 
-    //append the rederer to the body
+    //append the renderer to the body
+    
     document.body.appendChild(this.renderer.domElement);
 
     //create and add camera
@@ -68,7 +69,6 @@ AudioVisualizer.prototype.initialize = function () {
 
         that.camera.aspect = WIDTH / HEIGHT;
         that.camera.updateProjectionMatrix();
-
     });
 
     //background color of the scene
@@ -161,13 +161,14 @@ AudioVisualizer.prototype.setupAudioProcessing = function () {
 //get the default audio from the server
 AudioVisualizer.prototype.getAudio = function () {
     // var request = new XMLHttpRequest();
-    // request.open("GET", "Asset/Aathi-StarMusiQ.Com.mp3", true);
+    // request.open("GET", "Gorillaz-Let-Me-Out.mp3", true);
     // request.responseType = "arraybuffer";
     // request.send();
     // var that = this;
-    //request.onload = function () {
-        //that.start(request.response);
-    //}
+    // alert("that = this");
+    // request.onload = function () {
+    //     that.start(request.response);
+    // }
 };
 
 //start the audio processing
