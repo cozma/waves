@@ -11,9 +11,9 @@ $(document).ready(function() {
         });
 
         env.on("ready", function() {
-          camera(0)
-          //cam.play();
-          //cam.addTo(env.head).at(0, 0, -0.5);
+          var cam = camera(0);
+          cam.play();
+          cam.addTo(env.head).at(0, 0, -0.5);
           Preloader.hide();
         });
       });
