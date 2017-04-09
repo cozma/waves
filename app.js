@@ -8,7 +8,7 @@ var env = new Primrose.BrowserEnvironment({
 
 env.on("ready", function() {
 
-  camera(1)
+  camera(0)
     .then(function(cam) {
 
       cam.play();
