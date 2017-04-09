@@ -45,12 +45,14 @@ AudioVisualizer.prototype.initialize = function () {
         HEIGHT = window.innerHeight;
 
     //get the renderer
-    this.renderer = new THREE.WebGLRenderer({ antialias: true });
+    this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     this.renderer.setSize(WIDTH, HEIGHT);
 
-    //append the renderer to the body
-    
-    document.body.appendChild(this.renderer.domElement);
+    //append the renderer to the body inside container div
+    var container = document.getElementById("fullScreenButtonContainer");
+    document.body.appendChild(container);
+    container.appendChild( this.renderer.domElement );
+
 
     //create and add camera
     this.camera = new THREE.PerspectiveCamera(40, WIDTH / HEIGHT, 0.1, 20000);
@@ -72,7 +74,7 @@ AudioVisualizer.prototype.initialize = function () {
     });
 
     //background color of the scene
-    this.renderer.setClearColor(0x333F47, 1);
+    this.renderer.setClearColor(0x000000, 0);
 
     //create a light and add it to the scene
     var light = new THREE.PointLight(0xffffff);
